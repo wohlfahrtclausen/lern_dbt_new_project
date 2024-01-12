@@ -1,11 +1,11 @@
-with payment as (
+select
+    id,
+    order_id,
+    payment_method,
+    --status,
 
-    select
-        id as payment_id,
-        order_id,
-        payment_method,
-        amount
+    -- amount is stored in cents, convert it to dollars
+    amount / 100 as amount,
+    --created as created_at
 
-    from lern-dbt.jaffle_shop.payment
-)
-select * from payment
+from lern-dbt.jaffle_shop.payment
