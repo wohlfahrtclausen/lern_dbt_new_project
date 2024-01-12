@@ -6,6 +6,6 @@ with orders as (
         order_date,
         status
 
-    from lern-dbt.jaffle_shop.orders
+    from {{ source( 'jaffle_shop', 'orders') }}
 )
 select * from orders

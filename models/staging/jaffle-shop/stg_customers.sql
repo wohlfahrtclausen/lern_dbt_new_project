@@ -1,10 +1,10 @@
-with customers as (
+with source as (
 
     select
         id as customer_id,
         first_name,
         last_name
 
-    from lern-dbt.jaffle_shop.customers
+    from {{ source( 'jaffle_shop', 'customers') }}
 )
 select * from customers
