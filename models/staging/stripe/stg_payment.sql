@@ -1,3 +1,4 @@
+with payment as (
 select
     id,
     order_id,
@@ -8,4 +9,6 @@ select
     amount / 100 as amount,
     --created as created_at
 
-from lern-dbt.jaffle_shop.payment
+ from {{ source( 'jaffle_shop', 'payment') }}
+)
+select * from payment
