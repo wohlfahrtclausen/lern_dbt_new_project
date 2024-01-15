@@ -2,18 +2,23 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: a clone of a Postgress application database
     database: lern-dbt
     schema: jaffle_shop
     tables:
       - name: customers
+        description: the raw customers data
         columns:
           - name: id
+            description: the primary key for the raw sources data
             tests:
               - unique
               - not_null
       - name: orders
+        description: the raw orders data
         columns:
           - name: id
+            description: the primary key for the raw sources data
             tests:
               - unique
               - not_null
